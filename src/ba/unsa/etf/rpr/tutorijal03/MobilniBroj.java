@@ -33,6 +33,6 @@ public class MobilniBroj extends TelefonskiBroj {
 
     @Override
     public int hashCode() {
-        return getMobilnaMreza();
+        return 0;
     }
 }
