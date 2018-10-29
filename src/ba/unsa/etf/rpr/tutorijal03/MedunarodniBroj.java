@@ -10,4 +10,12 @@ public class MedunarodniBroj extends TelefonskiBroj {
     public String getBroj() {
         return broj;
     }
+
+    public void setDrzava(String drzava) {
+        this.drzava = drzava;
+    }
+
+    public void setBroj(String broj) {
+        this.broj = broj;
+    }
 }
