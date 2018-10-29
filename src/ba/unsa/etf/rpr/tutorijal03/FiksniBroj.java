@@ -26,4 +26,12 @@ public class FiksniBroj extends TelefonskiBroj {
     public Grad getGrad() {
         return grad;
     }
+
+    public void setBroj(String broj) {
+        this.broj = broj;
+    }
+
+    public void setGrad(Grad grad) {
+        this.grad = grad;
+    }
 }
