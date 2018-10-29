@@ -44,4 +44,9 @@ public class FiksniBroj extends TelefonskiBroj {
     public String ispisi() {
         return "0" + getGrad().getPozivniBroj() + "/" + getBroj();
     }
+
+    @Override
+    public int hashCode() {
+        return getGrad().getPozivniBroj();
+    }
 }
