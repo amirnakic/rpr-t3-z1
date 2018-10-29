@@ -9,6 +9,10 @@ public class FiksniBroj extends TelefonskiBroj {
         Grad(int pozivniBroj) {
             this.pozivniBroj = pozivniBroj;
         }
+
+        public int getPozivniBroj() {
+            return pozivniBroj;
+        }
     }
 
     private String broj;
