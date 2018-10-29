@@ -7,5 +7,6 @@ public abstract class TelefonskiBroj {
     TelefonskiBroj() {
         broj = "Nepoznat broj";
     }
-    
+
+    public abstract String ispisi();
 }
