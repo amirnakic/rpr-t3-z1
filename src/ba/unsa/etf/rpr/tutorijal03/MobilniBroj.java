@@ -5,6 +5,11 @@ public class MobilniBroj extends TelefonskiBroj {
     private int mobilnaMreza;
     private String broj;
 
+    public MobilniBroj(int mobilnaMreza, String broj) {
+        setMobilnaMreza(mobilnaMreza);
+        setBroj(broj);
+    }
+
     public int getMobilnaMreza() {
         return mobilnaMreza;
     }
