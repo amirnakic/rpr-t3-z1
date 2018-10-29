@@ -6,6 +6,9 @@ public class FiksniBroj extends TelefonskiBroj {
         MOSTAR(36), BIHAC(37), GORAZDE(38), POSUSJE(39), BRCKO(49);
         private final int pozivniBroj;
 
+        Grad(int pozivniBroj) {
+            this.pozivniBroj = pozivniBroj;
+        }
     }
 
     private String broj;
