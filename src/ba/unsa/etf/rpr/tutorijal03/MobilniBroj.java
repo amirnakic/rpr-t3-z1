@@ -25,4 +25,9 @@ public class MobilniBroj extends TelefonskiBroj {
     public void setBroj(String broj) {
         this.broj = broj;
     }
+
+    @Override
+    public String ispisi() {
+        return "0" + getMobilnaMreza() + "/" + getBroj();
+    }
 }
