@@ -30,4 +30,9 @@ public class MobilniBroj extends TelefonskiBroj {
     public String ispisi() {
         return "0" + getMobilnaMreza() + "/" + getBroj();
     }
+
+    @Override
+    public int hashCode() {
+        return getMobilnaMreza();
+    }
 }
