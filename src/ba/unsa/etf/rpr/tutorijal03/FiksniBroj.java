@@ -39,4 +39,9 @@ public class FiksniBroj extends TelefonskiBroj {
     public void setGrad(Grad grad) {
         this.grad = grad;
     }
+
+    @Override
+    public String ispisi() {
+        return "0" + getGrad().getPozivniBroj() + "/" + getBroj();
+    }
 }
