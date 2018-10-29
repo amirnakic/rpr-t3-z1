@@ -23,4 +23,10 @@ public class MedunarodniBroj extends TelefonskiBroj {
     public void setBroj(String broj) {
         this.broj = broj;
     }
+
+    @Override
+    public String ispisi() {
+        return getDrzava() + getBroj();
+    }
+    
 }
