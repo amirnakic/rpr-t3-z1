@@ -14,6 +14,10 @@ public class Imenik {
     }
 
     public void dodaj(String ime, TelefonskiBroj broj) {
-        getImenik().put(ime,broj);
+        getImenik().put(ime, broj);
+    }
+
+    public String dajBroj(String ime) {
+        return getImenik().get(ime).ispisi();
     }
 }
