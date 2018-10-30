@@ -44,6 +44,9 @@ public class Imenik {
     }
 
     Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
-        return null;
+        TreeSet<TelefonskiBroj> rezultat = new TreeSet<>();
+        for (String ime : getImenik().keySet())
+            if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) rezultat.add(getImenik().get(ime));
+        return rezultat;
     }
 }
