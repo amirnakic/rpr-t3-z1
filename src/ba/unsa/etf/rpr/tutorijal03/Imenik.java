@@ -12,4 +12,8 @@ public class Imenik {
     public HashMap<String, TelefonskiBroj> getImenik() {
         return imenik;
     }
+
+    public void dodaj(String ime, TelefonskiBroj broj) {
+        getImenik().put(ime,broj);
+    }
 }
