@@ -24,4 +24,15 @@ public class Imenik {
     public String dajIme(TelefonskiBroj broj) {
         return getImenik().get(broj).toString();
     }
+
+    public String naSlovo(char s) {
+        int brojac = 0;
+        String rezultat = "";
+        for (String ime : getImenik().keySet())
+            if (ime.indexOf(s) == 0) {
+                rezultat = brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
+                brojac++;
+            }
+         return rezultat;
+    }
 }
