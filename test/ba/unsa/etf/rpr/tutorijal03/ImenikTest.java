@@ -31,7 +31,9 @@ class ImenikTest {
     void dajBroj() { //trazenje broja korisnika cijeg imena nema u imeniku
         Imenik imenik = new Imenik();
         imenik.dodaj("Amir Nakic", new MobilniBroj(61, "911-818"));
-        assertNull(imenik.dajBroj("Ibrahim Alispahic"));
+        assertThrows(NullPointerException.class, () -> {
+            imenik.dajBroj("Ibrahim Alispahic");
+        });
     }
 
     @Test

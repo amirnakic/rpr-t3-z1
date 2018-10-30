@@ -19,7 +19,8 @@ public class Imenik {
         else throw new IllegalArgumentException("Broj se vec nalazi unutar imenika.");
     }
 
-    public String dajBroj(String ime) {
+    public String dajBroj(String ime) throws NullPointerException {
+        if (getImenik().get(ime) == null) throw new NullPointerException("Broj nije pronadjen, jer korisniki pod imenom " + ime + " nije dodan u imenik.");
         return getImenik().get(ime).ispisi();
     }
 
