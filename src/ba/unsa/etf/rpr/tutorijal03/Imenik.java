@@ -45,10 +45,12 @@ public class Imenik {
         return rezultat;
     }
 
-    Set<String> izGrada(FiksniBroj.Grad g) {
+    Set<String> izGrada(FiksniBroj.Grad g) throws IllegalArgumentException {
         TreeSet<String> rezultat = new TreeSet<>();
         for (String ime : getImenik().keySet())
             if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) rezultat.add(ime);
+        if (rezultat.size() == 0)
+            throw new IllegalArgumentException("Unutar imenika nema korisnika iz navedenog grada.");
         return rezultat;
     }
 

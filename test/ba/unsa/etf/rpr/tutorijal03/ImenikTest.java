@@ -92,6 +92,33 @@ class ImenikTest {
     }
 
     @Test
+    void izGrada1() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Ivo Ivic", new FiksniBroj(BRCKO, "123-456"));
+        imenik.dodaj("Sara Sarac", new FiksniBroj(BIHAC, "123-156"));
+        imenik.dodaj("Amir Nakic", new FiksniBroj(ZENICA, "123-656"));
+        imenik.dodaj("Amel Nakic", new MobilniBroj(64, "987-654"));
+        imenik.dodaj("Mirha Nakic", new MedunarodniBroj("+1", "23 45-67-89"));
+        Set<String> set = imenik.izGrada(ZENICA);
+        String result = "";
+        for (String ime : set) {
+            result += ime;
+        }
+        assertEquals("Amir Nakic", result);
+    }
+
+    @Test
+    void izGrada2() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Ivo Ivic", new FiksniBroj(BRCKO, "123-456"));
+        imenik.dodaj("Sara Sarac", new FiksniBroj(BIHAC, "123-156"));
+        imenik.dodaj("Amir Nakic", new FiksniBroj(ZENICA, "123-656"));
+        imenik.dodaj("Amel Nakic", new MobilniBroj(64, "987-654"));
+        imenik.dodaj("Mirha Nakic", new MedunarodniBroj("+1", "23 45-67-89"));
+        assertThrows(IllegalArgumentException.class, () -> imenik.izGrada(SARAJEVO));
+    }
+
+    @Test
     void izGradaBrojevi() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Ivo Ivic", new FiksniBroj(SARAJEVO, "123-456"));
