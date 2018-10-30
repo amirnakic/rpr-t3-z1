@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Imenik {
     private HashMap<String, TelefonskiBroj> imenik;
@@ -36,5 +36,14 @@ public class Imenik {
         return rezultat;
     }
 
-    
+    Set<String> izGrada(FiksniBroj.Grad g) {
+        List<String> temp = new ArrayList<>();
+        for (String ime : getImenik().keySet()) {
+            if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) temp.add(ime);
+        }
+        TreeSet<String> rezultat = new TreeSet<>();
+        rezultat.addAll(temp);
+        return rezultat;
+
+    }
 }
