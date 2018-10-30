@@ -133,4 +133,29 @@ class ImenikTest {
         }
         assertEquals("033/123-156,033/123-456,033/123-656,", result);
     }
+
+    @Test
+    void izGradaBrojevi1() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Ivo Ivic", new FiksniBroj(LIVNO, "123-456"));
+        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Meho Mehic", new FiksniBroj(ZENICA, "123-656"));
+        imenik.dodaj("Pero Peric", new MobilniBroj(64, "987-654"));
+        imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
+        Set<TelefonskiBroj> set = imenik.izGradaBrojevi(SARAJEVO);
+        String result = "";
+        for (TelefonskiBroj broj : set) {
+            result += broj.ispisi();
+        }
+        assertEquals("033/123-156", result);
+    }
+
+    @Test
+    void izGradaBrojevi2() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Ivo Ivic", new FiksniBroj(LIVNO, "123-456"));
+        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Meho Mehic", new FiksniBroj(ZENICA, "123-656"));
+        assertThrows(IllegalArgumentException.class, () -> imenik.izGradaBrojevi(BIHAC));
+    }
 }

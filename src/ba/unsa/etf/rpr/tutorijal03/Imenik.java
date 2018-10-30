@@ -54,10 +54,12 @@ public class Imenik {
         return rezultat;
     }
 
-    Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
+    Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) throws IllegalArgumentException {
         TreeSet<TelefonskiBroj> rezultat = new TreeSet<>();
         for (String ime : getImenik().keySet())
             if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) rezultat.add(getImenik().get(ime));
+        if (rezultat.size() == 0)
+            throw new IllegalArgumentException("Unutar imenika nema brojeva iz navedenog grada.");
         return rezultat;
     }
 }
