@@ -33,6 +33,8 @@ public class Imenik {
                 rezultat = brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
                 brojac++;
             }
-         return rezultat;
+        return rezultat;
     }
+
+    
 }
