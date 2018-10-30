@@ -20,7 +20,8 @@ public class Imenik {
     }
 
     public String dajBroj(String ime) throws NullPointerException {
-        if (getImenik().get(ime) == null) throw new NullPointerException("Broj nije pronadjen, jer korisniki pod imenom " + ime + " nije dodan u imenik.");
+        if (getImenik().get(ime) == null)
+            throw new NullPointerException("Broj nije pronadjen, jer korisnik pod imenom " + ime + " nije dodan u imenik.");
         return getImenik().get(ime).ispisi();
     }
 

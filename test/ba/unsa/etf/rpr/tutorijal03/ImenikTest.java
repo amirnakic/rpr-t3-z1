@@ -30,7 +30,7 @@ class ImenikTest {
     @Test
     void dajBroj() { //trazenje broja korisnika cijeg imena nema u imeniku
         Imenik imenik = new Imenik();
-        imenik.dodaj("Amir Nakic", new MobilniBroj(61, "911-818"));
+        imenik.dodaj("Amir Nakic", new MobilniBroj(62, "911-818"));
         assertThrows(NullPointerException.class, () -> {
             imenik.dajBroj("Ibrahim Alispahic");
         });
@@ -39,9 +39,16 @@ class ImenikTest {
     @Test
     void dajIme() {
         Imenik imenik = new Imenik();
-        imenik.dodaj("Amir Nakic", new MobilniBroj(61, "911-818"));
-        TelefonskiBroj tb = new MobilniBroj(61, "911-818");
+        imenik.dodaj("Amir Nakic", new MobilniBroj(62, "911-818"));
+        TelefonskiBroj tb = new MobilniBroj(62, "911-818");
         assertEquals("Amir Nakic", imenik.dajIme(tb));
+    }
+
+    @Test
+    void dajIme1() { //trazenje korisnika cijeg broja nema u imeniku
+        Imenik imenik = new Imenik();
+        TelefonskiBroj tb = new MobilniBroj(62, "911-818");
+        assertNull(imenik.dajIme(tb));
     }
 
     @Test
