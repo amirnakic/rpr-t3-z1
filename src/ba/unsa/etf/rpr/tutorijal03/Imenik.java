@@ -8,4 +8,8 @@ public class Imenik {
     public Imenik() {
         this.imenik = new HashMap<>();
     }
+
+    public HashMap<String, TelefonskiBroj> getImenik() {
+        return imenik;
+    }
 }
