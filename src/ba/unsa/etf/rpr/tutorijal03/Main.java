@@ -92,11 +92,11 @@ public class Main {
                     String broj1 = new String();
                     try{
                         broj1 = imenik.dajBroj(imeIPrezime);
+                        System.out.println("Uspješno je pronađen korisnik " + imeIPrezime + " sa brojem " + broj1 + ".");
                     }
                     catch(NullPointerException e) {
-                        e.getMessage();
+                        System.out.println(e.getMessage());
                     }
-                    System.out.println("Uspješno je pronađen korisnik " + imeIPrezime + " sa brojem " + broj1 + ".");
                     break;
             }
         }
