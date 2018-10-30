@@ -13,8 +13,10 @@ public class Imenik {
         return imenik;
     }
 
-    public void dodaj(String ime, TelefonskiBroj broj) {
-        getImenik().put(ime, broj);
+    public void dodaj(String ime, TelefonskiBroj broj) throws IllegalArgumentException {
+        if (dajIme(broj) == null)
+            getImenik().put(ime, broj);
+        else throw new IllegalArgumentException("Broj se vec nalazi unutar imenika.");
     }
 
     public String dajBroj(String ime) {
