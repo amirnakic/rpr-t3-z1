@@ -77,13 +77,14 @@ public class Main {
                                 drzava = ulaz.nextLine();
                                 System.out.println("Unesite telefonski broj: ");
                                 broj = ulaz.nextLine();
-                                TelefonskiBroj mb = new MedunarodniBroj(drzava, broj);
-                                imenik.dodaj(imeIPrezime, mb);
-                                System.out.println("Korisnik " + imeIPrezime + " sa brojem telefona " + mb.ispisi() + " je uspješno dodan.");
+                                TelefonskiBroj medjb = new MedunarodniBroj(drzava, broj);
+                                imenik.dodaj(imeIPrezime, medjb);
+                                System.out.println("Korisnik " + imeIPrezime + " sa brojem telefona " + medjb.ispisi() + " je uspješno dodan.");
                                 break;
                         }
                     }
                 break;
+
             }
         }
     }
