@@ -19,6 +19,14 @@ class ImenikTest {
     }
 
     @Test
+    void dajIme() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Amir Nakic", new MobilniBroj(61,"911-818"));
+        TelefonskiBroj tb = new MobilniBroj(61,"911-818");
+        assertEquals("Amir Nakic", imenik.dajIme(tb));
+    }
+
+    @Test
     void naSlovo() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
