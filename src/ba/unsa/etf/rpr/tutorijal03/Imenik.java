@@ -22,7 +22,10 @@ public class Imenik {
     }
 
     public String dajIme(TelefonskiBroj broj) {
-        return getImenik().get(broj).toString();
+        for (String ime : getImenik().keySet())
+            if (dajBroj(ime).equals(broj.ispisi()))
+                return ime;
+        return null;
     }
 
     public String naSlovo(char s) {
