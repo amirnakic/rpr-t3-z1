@@ -20,4 +20,8 @@ public class Imenik {
     public String dajBroj(String ime) {
         return getImenik().get(ime).ispisi();
     }
+
+    public String dajIme(TelefonskiBroj broj) {
+        return getImenik().get(broj).toString();
+    }
 }
