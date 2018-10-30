@@ -37,13 +37,13 @@ public class Imenik {
     }
 
     Set<String> izGrada(FiksniBroj.Grad g) {
-        List<String> temp = new ArrayList<>();
-        for (String ime : getImenik().keySet()) {
-            if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) temp.add(ime);
-        }
         TreeSet<String> rezultat = new TreeSet<>();
-        rezultat.addAll(temp);
+        for (String ime : getImenik().keySet())
+            if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) rezultat.add(ime);
         return rezultat;
+    }
 
+    Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
+        return null;
     }
 }
