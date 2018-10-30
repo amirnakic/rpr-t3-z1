@@ -63,6 +63,7 @@ public class Main {
                                 imeIPrezime = ulaz.nextLine();
                                 System.out.println("Unesite mobilnu mrežu: ");
                                 mobilnaMreza = ulaz.nextInt();
+                                ulaz.nextLine();
                                 System.out.println("Unesite telefonski broj: ");
                                 broj = ulaz.nextLine();
                                 TelefonskiBroj mb = new MobilniBroj(mobilnaMreza, broj);
@@ -83,8 +84,20 @@ public class Main {
                                 break;
                         }
                     }
-                break;
-
+                    break;
+                case 2:
+                    System.out.println("-----Izabrali ste opciju traženja broja na osnovu imena korisnika-----");
+                    System.out.println("Unesite ime korisnika: ");
+                    imeIPrezime = ulaz.nextLine();
+                    String broj1 = new String();
+                    try{
+                        broj1 = imenik.dajBroj(imeIPrezime);
+                    }
+                    catch(NullPointerException e) {
+                        e.getMessage();
+                    }
+                    System.out.println("Uspješno je pronađen korisnik " + imeIPrezime + " sa brojem " + broj1 + ".");
+                    break;
             }
         }
     }
