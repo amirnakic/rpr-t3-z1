@@ -63,6 +63,19 @@ class ImenikTest {
     }
 
     @Test
+    void naSlovo1() {
+        Imenik imenik = new Imenik();
+        imenik.dodaj("Sara Sarac", new FiksniBroj(SARAJEVO, "123-156"));
+        imenik.dodaj("Pero Peric", new FiksniBroj(SARAJEVO, "123-656"));
+        imenik.dodaj("Ivo Ivic", new MobilniBroj(61, "321-645"));
+        imenik.dodaj("Jozo Jozic", new MobilniBroj(64, "987-654"));
+        imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
+        assertThrows(IllegalArgumentException.class, () -> {
+            imenik.naSlovo('A');
+        });
+    }
+
+    @Test
     void izGrada() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Ivo Ivic", new FiksniBroj(SARAJEVO, "123-456"));

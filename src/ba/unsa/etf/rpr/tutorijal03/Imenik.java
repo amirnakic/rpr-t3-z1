@@ -32,14 +32,16 @@ public class Imenik {
         return null;
     }
 
-    public String naSlovo(char s) {
+    public String naSlovo(char s) throws IllegalArgumentException {
         int brojac = 0;
-        String rezultat = "";
+        String rezultat = null;
         for (String ime : getImenik().keySet())
             if (ime.indexOf(s) == 0) {
                 rezultat = brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
                 brojac++;
             }
+        if (rezultat == null)
+            throw new IllegalArgumentException("Unutar imenika nema korisnika sa pocetnim slovom " + s + ".");
         return rezultat;
     }
 
