@@ -37,7 +37,8 @@ public class Imenik {
         String rezultat = null;
         for (String ime : getImenik().keySet())
             if (ime.indexOf(s) == 0) {
-                rezultat = brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
+                if (rezultat!=null) rezultat += brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
+                else rezultat = brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
                 brojac++;
             }
         if (rezultat == null)

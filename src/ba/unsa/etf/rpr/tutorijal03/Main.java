@@ -98,6 +98,69 @@ public class Main {
                         System.out.println(e.getMessage());
                     }
                     break;
+                case 3:
+                    System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu njegovog broja-----");
+                    boolean novaNovaIstina = true;
+                    while (novaNovaIstina) {
+                        System.out.println("Izaberite na osnovu kojeg broja želite tražiti korisnika: ");
+                        System.out.println(" 0 - Nazad");
+                        System.out.println(" 1 - Na osnovu fiksnog broja");
+                        System.out.println(" 2 - Na osnovu mobilnog broja");
+                        System.out.println(" 3 - Na osnovu međunarodnog broja");
+                        int noviIzbor = ulaz.nextInt();
+                        ulaz.nextLine();
+                        switch (noviIzbor) {
+                            case 0:
+                                novaNovaIstina = false;
+                                break;
+                            case 1:
+                                System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu fiksnog broja-----");
+                                System.out.println("Unesite grad: ");
+                                grad = ulaz.nextLine();
+                                System.out.println("Unesite telefonski broj: ");
+                                broj = ulaz.nextLine();
+                                TelefonskiBroj tb = new FiksniBroj(FiksniBroj.Grad.valueOf(grad.toUpperCase()), broj);
+                                String korisnik = new String();
+                                korisnik = imenik.dajIme(tb);
+                                System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + tb.ispisi() + ".");
+                                break;
+                            case 2:
+                                System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu mobilnog broja-----");
+                                System.out.println("Unesite mobilnu mrežu: ");
+                                mobilnaMreza = ulaz.nextInt();
+                                ulaz.nextLine();
+                                System.out.println("Unesite telefonski broj: ");
+                                broj = ulaz.nextLine();
+                                TelefonskiBroj mb = new MobilniBroj(mobilnaMreza, broj);
+                                korisnik = imenik.dajIme(mb);
+                                System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + mb.ispisi() + ".");
+                                break;
+                            case 3:
+                                System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu međunarodnog broja-----");
+                                System.out.println("Unesite državu: ");
+                                drzava = ulaz.nextLine();
+                                System.out.println("Unesite telefonski broj: ");
+                                broj = ulaz.nextLine();
+                                TelefonskiBroj medjb = new MedunarodniBroj(drzava, broj);
+                                korisnik = imenik.dajIme(medjb);
+                                System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + medjb.ispisi() + ".");
+                                break;
+                        }
+                    }
+                    break;
+                case 4:
+                    System.out.println("-----Izabrali ste opciju ispisa registrovanih korisnika sa unesenim početnim slovom-----");
+                    System.out.println("Unesite početno slovo: ");
+                    char slovo;
+                    slovo = ulaz.next().charAt(0);
+                    ulaz.nextLine();
+                    try{
+                        System.out.println("Korisnici sa početnim slovom " + slovo + " su:\n" + imenik.naSlovo(slovo));
+                    }
+                    catch(NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
             }
         }
     }
