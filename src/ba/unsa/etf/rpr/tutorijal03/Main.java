@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
 
@@ -161,6 +163,26 @@ public class Main {
                         System.out.println(e.getMessage());
                     }
                     break;
+                case 5:
+                    System.out.println("-----Izabrali ste opciju ispisa registrovanih korisnika iz unesenog grada-----");
+                    System.out.println("Unesite ime grada: ");
+                    grad = ulaz.nextLine();
+                    try {
+                        Set<String> st = new TreeSet<>();
+                        st = imenik.izGrada(FiksniBroj.Grad.valueOf(grad.toUpperCase()));
+                        System.out.println("Registrovani korisnici iz tražemnog grada su: \n");
+                        int brojanje = 0;
+                        for (String ime : st) {
+                            System.out.println(brojanje + 1 + ". " + ime + "\n");
+                        }
+                        System.out.println("Korisnici su uspješno pronađeni.");
+                    }
+                    catch(IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case 6:
+                    
             }
         }
     }
