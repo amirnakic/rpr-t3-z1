@@ -123,7 +123,9 @@ public class Main {
                                 TelefonskiBroj tb = new FiksniBroj(FiksniBroj.Grad.valueOf(grad.toUpperCase()), broj);
                                 String korisnik = new String();
                                 korisnik = imenik.dajIme(tb);
-                                System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + tb.ispisi() + ".");
+                                if (korisnik != null)
+                                    System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + tb.ispisi() + ".");
+                                else System.out.println("Nije pronađen korisnik  sa brojem " + tb.ispisi() + ".");
                                 break;
                             case 2:
                                 System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu mobilnog broja-----");
@@ -134,7 +136,9 @@ public class Main {
                                 broj = ulaz.nextLine();
                                 TelefonskiBroj mb = new MobilniBroj(mobilnaMreza, broj);
                                 korisnik = imenik.dajIme(mb);
-                                System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + mb.ispisi() + ".");
+                                if (korisnik != null)
+                                    System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + mb.ispisi() + ".");
+                                else System.out.println("Nije pronađen korisnik  sa brojem " + mb.ispisi() + ".");
                                 break;
                             case 3:
                                 System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu međunarodnog broja-----");
@@ -144,7 +148,9 @@ public class Main {
                                 broj = ulaz.nextLine();
                                 TelefonskiBroj medjb = new MedunarodniBroj(drzava, broj);
                                 korisnik = imenik.dajIme(medjb);
-                                System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + medjb.ispisi() + ".");
+                                if (korisnik != null)
+                                    System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + medjb.ispisi() + ".");
+                                else System.out.println("Nije pronađen korisnik  sa brojem " + medjb.ispisi() + ".");
                                 break;
                         }
                     }
