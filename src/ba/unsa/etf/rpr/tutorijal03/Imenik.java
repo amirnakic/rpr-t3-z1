@@ -37,7 +37,7 @@ public class Imenik {
         String rezultat = null;
         for (String ime : getImenik().keySet())
             if (ime.indexOf(s) == 0) {
-                if (rezultat!=null) rezultat += brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
+                if (rezultat != null) rezultat += brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
                 else rezultat = brojac + 1 + ". " + ime + " - " + dajBroj(ime) + "\n";
                 brojac++;
             }
@@ -48,8 +48,14 @@ public class Imenik {
 
     Set<String> izGrada(FiksniBroj.Grad g) throws IllegalArgumentException {
         TreeSet<String> rezultat = new TreeSet<>();
-        for (String ime : getImenik().keySet())
-            if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) rezultat.add(ime);
+        for (String ime : getImenik().keySet()) {
+            TelefonskiBroj tb1 = this.getImenik().get(ime);
+            if (tb1 instanceof FiksniBroj) {
+                FiksniBroj fb1 = (FiksniBroj) tb1;
+                if (fb1.getGrad().getPozivniBroj() == g.getPozivniBroj())
+                    rezultat.add(ime);
+            }
+        }
         if (rezultat.size() == 0)
             throw new IllegalArgumentException("Unutar imenika nema korisnika iz navedenog grada.");
         return rezultat;
@@ -57,8 +63,14 @@ public class Imenik {
 
     Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) throws IllegalArgumentException {
         TreeSet<TelefonskiBroj> rezultat = new TreeSet<>();
-        for (String ime : getImenik().keySet())
-            if (getImenik().get(ime).hashCode() == g.getPozivniBroj()) rezultat.add(getImenik().get(ime));
+        for (String ime : getImenik().keySet()) {
+            TelefonskiBroj tb1 = this.getImenik().get(ime);
+            if (tb1 instanceof FiksniBroj) {
+                FiksniBroj fb = (FiksniBroj) tb1;
+                if (fb.getGrad().getPozivniBroj() == g.getPozivniBroj())
+                    rezultat.add(fb);
+            }
+        }
         if (rezultat.size() == 0)
             throw new IllegalArgumentException("Unutar imenika nema brojeva iz navedenog grada.");
         return rezultat;

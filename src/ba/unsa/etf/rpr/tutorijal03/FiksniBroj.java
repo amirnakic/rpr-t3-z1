@@ -47,6 +47,6 @@ public class FiksniBroj extends TelefonskiBroj {
 
     @Override
     public int hashCode() {
-        return getGrad().getPozivniBroj();
+        return 0;
     }
 }

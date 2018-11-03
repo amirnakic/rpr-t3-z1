@@ -92,11 +92,10 @@ public class Main {
                     System.out.println("Unesite ime korisnika: ");
                     imeIPrezime = ulaz.nextLine();
                     String broj1 = new String();
-                    try{
+                    try {
                         broj1 = imenik.dajBroj(imeIPrezime);
                         System.out.println("Uspješno je pronađen korisnik " + imeIPrezime + " sa brojem " + broj1 + ".");
-                    }
-                    catch(NullPointerException e) {
+                    } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -156,10 +155,9 @@ public class Main {
                     char slovo;
                     slovo = ulaz.next().charAt(0);
                     ulaz.nextLine();
-                    try{
+                    try {
                         System.out.println("Korisnici sa početnim slovom " + slovo + " su:\n" + imenik.naSlovo(slovo));
-                    }
-                    catch(NullPointerException e) {
+                    } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -177,8 +175,7 @@ public class Main {
                             brojanje++;
                         }
                         System.out.println("Korisnici su uspješno pronađeni.");
-                    }
-                    catch(IllegalArgumentException e) {
+                    } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -198,8 +195,7 @@ public class Main {
                             }
                         }
                         System.out.println("Korisnici su uspješno pronađeni.");
-                    }
-                    catch(IllegalArgumentException e) {
+                    } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
