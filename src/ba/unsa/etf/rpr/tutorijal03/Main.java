@@ -125,7 +125,7 @@ public class Main {
                                 korisnik = imenik.dajIme(tb);
                                 if (korisnik != null)
                                     System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + tb.ispisi() + ".");
-                                else System.out.println("Nije pronađen korisnik  sa brojem " + tb.ispisi() + ".");
+                                else System.out.println("Nije pronađen korisnik sa brojem " + tb.ispisi() + ".");
                                 break;
                             case 2:
                                 System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu mobilnog broja-----");
@@ -138,7 +138,7 @@ public class Main {
                                 korisnik = imenik.dajIme(mb);
                                 if (korisnik != null)
                                     System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + mb.ispisi() + ".");
-                                else System.out.println("Nije pronađen korisnik  sa brojem " + mb.ispisi() + ".");
+                                else System.out.println("Nije pronađen korisnik sa brojem " + mb.ispisi() + ".");
                                 break;
                             case 3:
                                 System.out.println("-----Izabrali ste opciju traženja korisnika na osnovu međunarodnog broja-----");
@@ -150,7 +150,7 @@ public class Main {
                                 korisnik = imenik.dajIme(medjb);
                                 if (korisnik != null)
                                     System.out.println("Uspješno je pronađen korisnik " + korisnik + " sa brojem " + medjb.ispisi() + ".");
-                                else System.out.println("Nije pronađen korisnik  sa brojem " + medjb.ispisi() + ".");
+                                else System.out.println("Nije pronađen korisnik sa brojem " + medjb.ispisi() + ".");
                                 break;
                         }
                     }
@@ -192,11 +192,11 @@ public class Main {
                     try {
                         Set<TelefonskiBroj> st = new TreeSet<>();
                         st = imenik.izGradaBrojevi(FiksniBroj.Grad.valueOf(grad.toUpperCase()));
-                        System.out.println("Registrovani korisnici sa unesenim brojem iz traženog grada su: ");
+                        System.out.println("Registrovani brojevi iz traženog grada su: ");
                         int brojanje = 0;
                         for (TelefonskiBroj tb : st) {
                             if (tb instanceof FiksniBroj) {
-                                System.out.println((brojanje + 1) + ". " + imenik.dajIme(tb));
+                                System.out.println((brojanje + 1) + ". " + tb.ispisi());
                                 brojanje++;
                             }
                         }
