@@ -170,10 +170,11 @@ public class Main {
                     try {
                         Set<String> st = new TreeSet<>();
                         st = imenik.izGrada(FiksniBroj.Grad.valueOf(grad.toUpperCase()));
-                        System.out.println("Registrovani korisnici iz tražemnog grada su: \n");
+                        System.out.println("Registrovani korisnici iz traženog grada su: ");
                         int brojanje = 0;
                         for (String ime : st) {
                             System.out.println(brojanje + 1 + ". " + ime + "\n");
+                            brojanje++;
                         }
                         System.out.println("Korisnici su uspješno pronađeni.");
                     }
@@ -182,7 +183,26 @@ public class Main {
                     }
                     break;
                 case 6:
-                    
+                    System.out.println("-----Izabrali ste opciju ispisa brojeva registrovanih korisnika iz unesenog grada-----");
+                    System.out.println("Unesite grad: ");
+                    grad = ulaz.nextLine();
+                    try {
+                        Set<TelefonskiBroj> st = new TreeSet<>();
+                        st = imenik.izGradaBrojevi(FiksniBroj.Grad.valueOf(grad.toUpperCase()));
+                        System.out.println("Registrovani korisnici sa unesenim brojem iz traženog grada su: ");
+                        int brojanje = 0;
+                        for (TelefonskiBroj tb : st) {
+                            if (tb instanceof FiksniBroj) {
+                                System.out.println((brojanje + 1) + ". " + imenik.dajIme(tb) + "\n");
+                                brojanje++;
+                            }
+                        }
+                        System.out.println("Korisnici su uspješno pronađeni.");
+                    }
+                    catch(IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
             }
         }
     }
