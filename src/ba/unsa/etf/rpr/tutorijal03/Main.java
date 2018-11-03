@@ -171,7 +171,7 @@ public class Main {
                         System.out.println("Registrovani korisnici iz traženog grada su: ");
                         int brojanje = 0;
                         for (String ime : st) {
-                            System.out.println(brojanje + 1 + ". " + ime + "\n");
+                            System.out.println(brojanje + 1 + ". " + ime);
                             brojanje++;
                         }
                         System.out.println("Korisnici su uspješno pronađeni.");
@@ -190,7 +190,7 @@ public class Main {
                         int brojanje = 0;
                         for (TelefonskiBroj tb : st) {
                             if (tb instanceof FiksniBroj) {
-                                System.out.println((brojanje + 1) + ". " + imenik.dajIme(tb) + "\n");
+                                System.out.println((brojanje + 1) + ". " + imenik.dajIme(tb));
                                 brojanje++;
                             }
                         }
